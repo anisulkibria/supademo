@@ -1,0 +1,67 @@
+{{#get "posts" filter="featured:true" limit="1" include="authors,tags"}}
+<section class="sup-featured-section">
+    <div class="sup-featured-section-container">
+    <div class="sup-slider-container">
+        <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {{#foreach posts}}
+                <a href="{{url}}" class="swiper-slide sup-featured-blog">
+                <div class="sup-featured-blog-info">
+                    <h3 class="sup-featured-blog-title gh-card-title"> {{title}} </h3>
+                    <div class="sup-featured-blog-meta">{{date published_at}} &bull; {{reading_time}}</div>
+                    <div class="sup-featured-blog-meta"></div>
+                    <p class="sup-featured-blog-description"> {{excerpt}} </p>
+                </div>
+                
+                {{#if feature_image}}
+                        <img
+                            srcset="{{img_url feature_image size="s"}} 300w,
+                                    {{img_url feature_image size="m"}} 720w,
+                                    {{img_url feature_image size="l"}} 960w,
+                                    {{img_url feature_image size="xl"}} 1200w,
+                                    {{img_url feature_image size="xxl"}} 2000w"
+                            sizes="(max-width: 1200px) 100vw, 1200px"
+                            src="{{img_url feature_image size="m"}}"
+                            alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                        >
+                {{/if}}
+                </a>
+            {{/foreach}}
+        </div>
+        </div>
+        {{!--<div class="swiper-button-next sup-swiper-button-next"></div>
+        <div class="swiper-button-prev sup-swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>--}}
+    </div>
+    </div>
+</section>
+{{/get}}
+
+
+{{#get "posts" filter="featured:true" limit="3"  include="authors,tags"}}
+    <section class="sup-blog-section">
+        <div class="sup-blog-section-container">
+            {{#foreach posts from="2"}}
+                <a href="{{url}}" class="sup-blog-card">
+                    {{#if feature_image}}
+                        <img srcset="{{img_url feature_image size="s"}} 300w,
+                                    {{img_url feature_image size="m"}} 720w,
+                                    {{img_url feature_image size="l"}} 960w,
+                                    {{img_url feature_image size="xl"}} 1200w,
+                                    {{img_url feature_image size="xxl"}} 2000w" sizes="(max-width: 1200px) 100vw, 1200px" src="{{img_url feature_image size="m"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+                    {{else}}
+                        <div class="no-image"></div>          
+                    {{/if}}
+                    <div class="sup-blog-info">
+                        <div class="sup-blog-meta">
+                            <div class="sup-blog-date">{{date published_at}}</div>
+                            <div class="sup-blog-duration">{{reading_time}}</div>
+                        </div>
+                        <h1 class="sup-blog-title">{{title}}</h1>
+                        <p class="sup-blog-description"> {{excerpt}} </p>
+                    </div>
+                </a>
+            {{/foreach}}
+        </div>
+    </section>
+{{/get}}

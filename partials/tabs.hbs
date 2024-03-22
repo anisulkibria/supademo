@@ -1,0 +1,14 @@
+{{#get "tags"}}
+<div class="sup-page-links-container">
+    <a href="/blog/" title="All Posts" class="sup-page-link">All Posts</a>
+    {{#foreach tags}}
+        <a href="{{url}}" title="{{name}}" class="tag-{{id}} {{slug}} sup-page-link">{{name}}</a>
+    {{/foreach}}
+</div>
+<select name="pages" id="pages" class="sup-mobile-pages" title="Pages">
+    <option value="/blog/">All Posts</option>
+    {{#foreach tags}}
+        <option value="{{url}}">{{name}}</option>
+    {{/foreach}}
+</select>
+{{/get}}

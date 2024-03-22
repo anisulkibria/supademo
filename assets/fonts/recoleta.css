@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'recoletablack';
+    src: url('recoleta-black-webfont.woff2') format('woff2'),
+         url('recoleta-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'recoletabold';
+    src: url('recoleta-bold-webfont.woff2') format('woff2'),
+         url('recoleta-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'recoletamedium';
+    src: url('recoleta-medium-webfont.woff2') format('woff2'),
+         url('recoleta-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'recoletasemibold';
+    src: url('recoleta-semibold-webfont.woff2') format('woff2'),
+         url('recoleta-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
